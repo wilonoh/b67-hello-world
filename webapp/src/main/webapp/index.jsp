@@ -1,77 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Calculator</title>
-  <style>
-    body {
-      font-family: sans-serif;
-    }
-
-    .calculator {
-      width: 300px;
-      margin: 0 auto;
-    }
-
-    .display {
-      width: 100%;
-      height: 50px;
-      border: 1px solid black;
-      text-align: right;
-    }
-
-    .buttons {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .button {
-      width: 25%;
-      height: 50px;
-      border: 1px solid black;
-      text-align: center;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        input[type="button"] {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-  <div class="calculator">
-    <input type="text" class="display" id="display">
-    <div class="buttons">
-      <button class="button" onclick="add(1)">1</button>
-      <button class="button" onclick="add(2)">2</button>
-      <button class="button" onclick="add(3)">3</button>
-      <button class="button" onclick="add('+')">+</button>
-      <button class="button" onclick="add(4)">4</button>
-      <button class="button" onclick="add(5)">5</button>
-      <button class="button" onclick="add(6)">6</button>
-      <button class="button" onclick="add('-')">-</button>
-      <button class="button" onclick="add(7)">7</button>
-      <button class="button" onclick="add(8)">8</button>
-      <button class="button" onclick="add(9)">9</button>
-      <button class="button" onclick="add('*')">*</button>
-      <button class="button" onclick="add('.')">.</button>
-      <button class="button" onclick="add(0)">0</button>
-      <button class="button" onclick="equal()">=</button>
-      <button class="button" onclick="clear()">C</button>
-    </div>
-  </div>
+    <h1>Simple Calculator</h1>
+    <input type="text" id="result" readonly>
+    <br>
+    <input type="button" value="1" onclick="addToResult('1')">
+    <input type="button" value="2" onclick="addToResult('2')">
+    <input type="button" value="3" onclick="addToResult('3')">
+    <input type="button" value="+" onclick="addToResult('+')">
+    <br>
+    <input type="button" value="4" onclick="addToResult('4')">
+    <input type="button" value="5" onclick="addToResult('5')">
+    <input type="button" value="6" onclick="addToResult('6')">
+    <input type="button" value="-" onclick="addToResult('-')">
+    <br>
+    <input type="button" value="7" onclick="addToResult('7')">
+    <input type="button" value="8" onclick="addToResult('8')">
+    <input type="button" value="9" onclick="addToResult('9')">
+    <input type="button" value="*" onclick="addToResult('*')">
+    <br>
+    <input type="button" value="0" onclick="addToResult('0')">
+    <input type="button" value="C" onclick="clearResult()">
+    <input type="button" value="=" onclick="calculateResult()">
+    <input type="button" value="/" onclick="addToResult('/')">
+    
+    <script>
+        function addToResult(value) {
+            document.getElementById('result').value += value;
+        }
 
-  <script>
-    function add(value) {
-      document.getElementById('display').value += value;
-    }
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
 
-    function equal() {
-      var expression = document.getElementById('display').value;
-      var result = eval(expression);
-      document.getElementById('display').value = result;
-    }
-
-    function clear() {
-      document.getElementById('display').value = '';
-    }
-  </script>
+        function calculateResult() {
+            try {
+                let result = eval(document.getElementById('result').value);
+                document.getElementById('result').value = result;
+            } catch(error) {
+                document.getElementById('result').value = 'Error';
+            }
+        }
+    </script>
 </body>
 </html>
