@@ -3,55 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
+    <title>Blue Background Page</title>
     <style>
-        input[type="button"] {
-            width: 50px;
-            height: 50px;
+        body {
+            background-color: #3498db; /* This is the hex color code for blue */
+            color: #ffffff; /* This sets the text color to white */
+            font-family: Arial, sans-serif; /* This sets the font style */
+            text-align: center; /* This centers the text */
+            padding: 50px; /* Adds some space around the content */
         }
     </style>
 </head>
 <body>
-    <h1>Simple Calculator</h1>
-    <input type="text" id="result" readonly>
-    <br>
-    <input type="button" value="1" onclick="addToResult('1')">
-    <input type="button" value="2" onclick="addToResult('2')">
-    <input type="button" value="3" onclick="addToResult('3')">
-    <input type="button" value="+" onclick="addToResult('+')">
-    <br>
-    <input type="button" value="4" onclick="addToResult('4')">
-    <input type="button" value="5" onclick="addToResult('5')">
-    <input type="button" value="6" onclick="addToResult('6')">
-    <input type="button" value="-" onclick="addToResult('-')">
-    <br>
-    <input type="button" value="7" onclick="addToResult('7')">
-    <input type="button" value="8" onclick="addToResult('8')">
-    <input type="button" value="9" onclick="addToResult('9')">
-    <input type="button" value="*" onclick="addToResult('*')">
-    <br>
-    <input type="button" value="0" onclick="addToResult('0')">
-    <input type="button" value="C" onclick="clearResult()">
-    <input type="button" value="=" onclick="calculateResult()">
-    <input type="button" value="/" onclick="addToResult('/')">
-    
-    <script>
-        function addToResult(value) {
-            document.getElementById('result').value += value;
-        }
-
-        function clearResult() {
-            document.getElementById('result').value = '';
-        }
-
-        function calculateResult() {
-            try {
-                let result = eval(document.getElementById('result').value);
-                document.getElementById('result').value = result;
-            } catch(error) {
-                document.getElementById('result').value = 'Error';
-            }
-        }
-    </script>
+    <h1>Welcome to the Blue Background Page</h1>
+    <p>This is a sample page with a blue background.</p>
+    <p>Feel free to customize it further!</p>
 </body>
 </html>
